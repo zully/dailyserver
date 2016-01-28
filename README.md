@@ -1,6 +1,7 @@
 # dailyserver
 
 Example .rackspace_cloud_credentials
+
 '''
 [rackspace_cloud]
 username = user_name
