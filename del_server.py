@@ -9,6 +9,7 @@ warnings.filterwarnings('ignore')
 server_name=options.server_name
 
 pyrax.set_setting('identity_type', 'rackspace')
+pyrax.set_setting('region', 'IAD')
 
 try:
     pyrax.set_credential_file(os.path.expanduser('~/.rackspace_cloud_credentials'))

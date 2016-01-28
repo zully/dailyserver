@@ -12,6 +12,7 @@ domain_name=options.domain_name
 host_name=server_name + '.' + domain_name
 
 pyrax.set_setting('identity_type', 'rackspace')
+pyrax.set_setting('region', 'IAD')
 
 try:
     pyrax.set_credential_file(os.path.expanduser('~/.rackspace_cloud_credentials'))
@@ -30,7 +31,7 @@ for img in imgs.list(visibility='private'):
         image_id = img.id
 
 server = cs.servers.create(server_name, image_id, flavor_id)
-time.sleep(5)
+time.sleep(30)
 
 pyrax.utils.wait_until(server, "status", "ACTIVE", interval=10, attempts=1000, verbose=False)
 
